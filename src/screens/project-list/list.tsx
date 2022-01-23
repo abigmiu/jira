@@ -18,10 +18,10 @@ export const List = ({ list, users }: ListProps) => {
 	return (
 		<table>
 			<thead>
-				<tr>
-					<th>project</th>
-					<th>manager</th>
-				</tr>
+			<tr>
+				<th>project</th>
+				<th>manager</th>
+			</tr>
 			</thead>
 			<tbody>
 			{
@@ -30,7 +30,7 @@ export const List = ({ list, users }: ListProps) => {
 						<tr key={project.id}>
 							<td>{project.name}</td>
 							<td>
-								{users.find(user => project.personId === user.id)?.name || 'wwvi'}
+								{users.find(user => project.personId === user.id)?.name || '未知'}
 							</td>
 						</tr>
 					)

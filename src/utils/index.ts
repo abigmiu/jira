@@ -6,29 +6,29 @@ import { useEffect, useState } from 'react'
  * @param val
  * @returns
  */
-export const isFalsy = (val: any) => (val === 0 ? false : !val);
+export const isFalsy = (val: any) => (val === 0 ? false : !val)
 /**
  * 清楚掉对象中值为空的项
  * @param obj
  * @returns
  */
 export const cleanObject = (obj: object) => {
-	const result = { ...obj };
+	const result = { ...obj }
 	Object.keys(obj).forEach(key => {
 		// @ts-ignore
-		const value = obj[key];
+		const value = obj[key]
 		if (isFalsy(value)) {
 			// @ts-ignore
-			delete result[key];
+			delete result[key]
 		}
-	});
-	return result;
-};
+	})
+	return result
+}
 
 // 必须用use开头
 export const useMount = (callback: () => void) => {
 	useEffect(() => {
-		callback();
+		callback()
 	}, [])
 }
 

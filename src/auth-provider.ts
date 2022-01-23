@@ -6,7 +6,7 @@ export const getToken = () => {
 	return window.localStorage.getItem(localStorageKey)
 }
 
-export const handleUserResponse = ({user}: {user: User}) => {
+export const handleUserResponse = ({ user }: { user: User }) => {
 	window.localStorage.setItem(localStorageKey, user.token || '')
 	return user
 }
@@ -14,14 +14,14 @@ export const handleUserResponse = ({user}: {user: User}) => {
 const apiUrl = process.env.REACT_APP_API_URL
 
 export const login = (data: {
-		username: string,
-		password: string,
-	}
+						  username: string,
+						  password: string,
+					  }
 ) => {
 	return fetch(`${apiUrl}/login`, {
 		method: 'POST',
 		headers: {
-			'Content-Type': 'application/json',
+			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify(data)
 	}).then(async (response) => {
@@ -35,14 +35,14 @@ export const login = (data: {
 
 
 export const register = (data: {
-						  username: string,
-						  password: string,
-					  }
+							 username: string,
+							 password: string,
+						 }
 ) => {
 	return fetch(`${apiUrl}/register`, {
 		method: 'POST',
 		headers: {
-			'Content-Type': 'application/json',
+			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify(data)
 	}).then(async (response) => {
